@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://cd2fuw7ec8wat"]
+
+[ext_resource type="Script" path="res://scripts/door.gd" id="1_6cr60"]
+[ext_resource type="Texture2D" uid="uid://rdjy5ggrtdti" path="res://assets/cave.png" id="2_h00b5"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_v7htf"]
+size = Vector2(16, 16)
+
+[node name="door" type="Area2D"]
+script = ExtResource("1_6cr60")
+
+[node name="door_sprite" type="Sprite2D" parent="."]
+texture = ExtResource("2_h00b5")
+
+[node name="door_collision" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_v7htf")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]
