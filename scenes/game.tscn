@@ -1,7 +1,6 @@
-[gd_scene load_steps=3 format=3 uid="uid://bqi0n0ec0uw06"]
+[gd_scene load_steps=2 format=3 uid="uid://bqi0n0ec0uw06"]
 
 [ext_resource type="PackedScene" uid="uid://c5otcxy17agc3" path="res://scenes/player.tscn" id="1_qpulr"]
-[ext_resource type="PackedScene" uid="uid://cd2fuw7ec8wat" path="res://scenes/door.tscn" id="3_85v7t"]
 
 [node name="game" type="Control"]
 layout_mode = 3
@@ -19,17 +18,14 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="deep_purple" type="ColorRect" parent="background"]
+[node name="darkest" type="ColorRect" parent="background"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(0.215686, 0.211765, 0.305882, 1)
-
-[node name="door" parent="." instance=ExtResource("3_85v7t")]
-position = Vector2(136, 72)
+color = Color(0.101961, 0.0666667, 0.133333, 1)
 
 [node name="player" parent="." instance=ExtResource("1_qpulr")]
 position = Vector2(256, 144)
