@@ -1,0 +1,42 @@
+[gd_scene load_steps=6 format=3 uid="uid://bqi0n0ec0uw06"]
+
+[ext_resource type="Script" path="res://scripts/game_control.gd" id="1_1mxds"]
+[ext_resource type="PackedScene" uid="uid://c5otcxy17agc3" path="res://scenes/Player.tscn" id="2_0yf63"]
+[ext_resource type="Script" path="res://scripts/level_control.gd" id="3_7aavn"]
+[ext_resource type="PackedScene" uid="uid://drqrwekif56uv" path="res://scenes/level/level.tscn" id="3_pndlw"]
+[ext_resource type="PackedScene" uid="uid://cggymoh3ki6g4" path="res://scenes/PlayerStats.tscn" id="3_qbgg4"]
+
+[node name="GameControl" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_1mxds")
+
+[node name="LevelControl" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("3_7aavn")
+
+[node name="background" type="ColorRect" parent="LevelControl"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.145098, 0.219608, 0.254902, 1)
+
+[node name="Level" parent="LevelControl" instance=ExtResource("3_pndlw")]
+
+[node name="Player" parent="." instance=ExtResource("2_0yf63")]
+
+[node name="UI" type="CanvasLayer" parent="."]
+
+[node name="PlayerStats" parent="UI" instance=ExtResource("3_qbgg4")]

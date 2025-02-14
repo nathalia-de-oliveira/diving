@@ -1,24 +1,19 @@
 extends CharacterBody2D
 
-
-#hi 
-
-@onready var animation_player = $animated_player_sprite
-
+@onready var animation_player = $PlayerSprite
 var player_place = "wet"
 var animation_direction = "front"
 var animation_state = "idle"
 
 @export var MAX_SPEED = 30
-@export var ACCELERATION = 300
-@export var FRICTION = 150
-
+@export var ACCELERATION = 10000
+@export var FRICTION = 10000
 @onready var axis = Vector2.ZERO
 var previous_axis = Vector2.ZERO
 
 func _ready():
 	animation_player.stop()
-
+	
 func _physics_process(delta):
 	movement(delta)
 	
@@ -63,6 +58,7 @@ func movement(delta):
 		animation_state = "idle"
 	
 	var animation_to_play = player_place + "_" + animation_direction + "_" + animation_state
+	
 	animation_player.play(animation_to_play)
 	
 	move_and_slide()

@@ -1,0 +1,82 @@
+[gd_scene load_steps=6 format=3 uid="uid://cggymoh3ki6g4"]
+
+[ext_resource type="Texture2D" uid="uid://cw58x161hcj08" path="res://assets/UI/player_bars/bar_under.png" id="1_8haxe"]
+[ext_resource type="Script" path="res://scripts/interface/player_stats.gd" id="1_oivti"]
+[ext_resource type="Texture2D" uid="uid://dbdp40gyee3ci" path="res://assets/UI/player_bars/gas_bars_icon.png" id="2_7nsl0"]
+[ext_resource type="Texture2D" uid="uid://gm42dxwnerqu" path="res://assets/UI/player_bars/gas_process.png" id="3_flsa8"]
+[ext_resource type="Texture2D" uid="uid://2mn3by5nfpfp" path="res://assets/UI/player_bars/heart_bars_icon.png" id="5_jg8i8"]
+
+[node name="PlayerStats" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_oivti")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 4
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("2_7nsl0")
+expand_mode = 2
+
+[node name="GasBar" type="TextureProgressBar" parent="MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+value = 1.0
+nine_patch_stretch = true
+stretch_margin_left = 6
+stretch_margin_top = 6
+stretch_margin_right = 6
+stretch_margin_bottom = 6
+texture_under = ExtResource("1_8haxe")
+texture_progress = ExtResource("3_flsa8")
+texture_progress_offset = Vector2(5, 0)
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+texture = ExtResource("5_jg8i8")
+expand_mode = 2
+
+[node name="HealthBar" type="TextureProgressBar" parent="MarginContainer/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+nine_patch_stretch = true
+stretch_margin_left = 6
+stretch_margin_top = 6
+stretch_margin_right = 6
+stretch_margin_bottom = 6
+texture_under = ExtResource("1_8haxe")
+texture_progress = ExtResource("3_flsa8")
+texture_progress_offset = Vector2(5, 0)
+tint_progress = Color(0.49, 0.2058, 0.2058, 1)
+
+[node name="Breathing" type="Timer" parent="."]
+wait_time = 3.0
+autostart = true
+
+[connection signal="timeout" from="Breathing" to="." method="_on_breathing_timeout"]
