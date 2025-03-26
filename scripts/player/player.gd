@@ -1,5 +1,6 @@
 extends CharacterBody2D
 
+@onready var light_beam = $PlayerLightBeam
 @onready var animation_player = $PlayerSprite
 var player_place = "wet"
 var animation_direction = "front"
@@ -18,7 +19,6 @@ func _physics_process(delta):
 	movement(delta)
 	
 func get_input_axis():
-	
 	axis.x = int(Input.is_action_pressed("move_right")) - int(Input.is_action_pressed("move_left")) 
 	axis.y = int(Input.is_action_pressed("move_down")) - int(Input.is_action_pressed("move_up")) 
 	
@@ -29,15 +29,19 @@ func movement(delta):
 	axis = get_input_axis()
 	
 	if axis.y == 1:
+		light_beam.rotation_degrees = 0
 		animation_player.flip_h = false
 		animation_direction = "front"
 	if axis.y == -1:
+		light_beam.rotation_degrees = 180
 		animation_player.flip_h = false
 		animation_direction = "back"
 	if axis.x > 0:
+		light_beam.rotation_degrees = 270
 		animation_player.flip_h = true
 		animation_direction = "side"
 	if axis.x < 0:
+		light_beam.rotation_degrees = 90
 		animation_player.flip_h = false
 		animation_direction = "side"
 		
@@ -61,4 +65,12 @@ func movement(delta):
 	
 	animation_player.play(animation_to_play)
 	
+	#TODO: arrumar a viewport
+	#TODO: viewport tem que mudar conforme o limite da fase
+	
 	move_and_slide()
+
+#TODO: movimentação: diagonais
+#TODO: Sprites nas diagonais
+#TODO: Luz e posição do player na diagonal OU acompanhar mouse(?)
+#TODO: Bug de iluminação: parte do sprite do player fica escuro quando está na parede 

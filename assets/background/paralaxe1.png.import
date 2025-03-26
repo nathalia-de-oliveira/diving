@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dkf1a1gug1s3m"
-path="res://.godot/imported/tileset_shallows.png-4ca6e9aa3ee1b62d8a9dcf24e24ba8c3.ctex"
+uid="uid://8kjapksa76t7"
+path="res://.godot/imported/paralaxe1.png-a5ae38e58f3dc45b4cdc7936e5c62d5b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/tilesets/tileset_shallows.png"
-dest_files=["res://.godot/imported/tileset_shallows.png-4ca6e9aa3ee1b62d8a9dcf24e24ba8c3.ctex"]
+source_file="res://assets/background/paralaxe1.png"
+dest_files=["res://.godot/imported/paralaxe1.png-a5ae38e58f3dc45b4cdc7936e5c62d5b.ctex"]
 
 [params]
 

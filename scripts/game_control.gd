@@ -1,6 +1,7 @@
 extends Control
 
 @onready var level_control = $LevelControl
+@onready var UI_player = $UI/PlayerStats
 
 func _ready() -> void:
-	level_control.current_level = 0
+	pass

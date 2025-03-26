@@ -1,5 +1,7 @@
 extends Node
 
+var level
+
 var max_gas
 var player_gas
 

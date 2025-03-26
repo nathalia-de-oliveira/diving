@@ -1,9 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://cggymoh3ki6g4"]
+[gd_scene load_steps=8 format=3 uid="uid://cggymoh3ki6g4"]
 
 [ext_resource type="Texture2D" uid="uid://cw58x161hcj08" path="res://assets/UI/player_bars/bar_under.png" id="1_8haxe"]
 [ext_resource type="Script" path="res://scripts/interface/player_stats.gd" id="1_oivti"]
 [ext_resource type="Texture2D" uid="uid://dbdp40gyee3ci" path="res://assets/UI/player_bars/gas_bars_icon.png" id="2_7nsl0"]
+[ext_resource type="Texture2D" uid="uid://jg0syomy8b0y" path="res://assets/UI/player_bars/clock_shape.png" id="2_ib1rx"]
 [ext_resource type="Texture2D" uid="uid://gm42dxwnerqu" path="res://assets/UI/player_bars/gas_process.png" id="3_flsa8"]
+[ext_resource type="FontFile" uid="uid://dmr3pgg4p5feu" path="res://assets/font/Clockwork.otf" id="3_w25po"]
 [ext_resource type="Texture2D" uid="uid://2mn3by5nfpfp" path="res://assets/UI/player_bars/heart_bars_icon.png" id="5_jg8i8"]
 
 [node name="PlayerStats" type="Control"]
@@ -16,60 +18,97 @@ grow_vertical = 2
 script = ExtResource("1_oivti")
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
+custom_minimum_size = Vector2(-9, 0)
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_constants/margin_left = 20
-theme_override_constants/margin_top = 20
-theme_override_constants/margin_right = 20
-theme_override_constants/margin_bottom = 20
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
 
-[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
-layout_mode = 2
-theme_override_constants/separation = 4
-
-[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
+[node name="HBoxContainer3" type="HBoxContainer" parent="MarginContainer"]
 layout_mode = 2
 
-[node name="TextureRect" type="TextureRect" parent="MarginContainer/VBoxContainer/HBoxContainer"]
+[node name="ClockTextureRect" type="TextureRect" parent="MarginContainer/HBoxContainer3"]
+clip_contents = true
+custom_minimum_size = Vector2(18, 18)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+texture = ExtResource("2_ib1rx")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="ClockNumber" type="Label" parent="MarginContainer/HBoxContainer3/ClockTextureRect"]
+clip_contents = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.384314, 0.27451, 0.219608, 1)
+theme_override_colors/font_outline_color = Color(0.682353, 0.639216, 0.423529, 1)
+theme_override_constants/outline_size = 3
+theme_override_fonts/font = ExtResource("3_w25po")
+theme_override_font_sizes/font_size = 6
+text = "12345
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/HBoxContainer3"]
+layout_mode = 2
+theme_override_constants/separation = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/HBoxContainer3/VBoxContainer"]
+layout_mode = 2
+
+[node name="GasTextureRect" type="TextureRect" parent="MarginContainer/HBoxContainer3/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(8, 0)
 layout_mode = 2
 texture = ExtResource("2_7nsl0")
-expand_mode = 2
+expand_mode = 4
+stretch_mode = 5
 
-[node name="GasBar" type="TextureProgressBar" parent="MarginContainer/VBoxContainer/HBoxContainer"]
+[node name="GasBar" type="TextureProgressBar" parent="MarginContainer/HBoxContainer3/VBoxContainer/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 0
 value = 1.0
 nine_patch_stretch = true
 stretch_margin_left = 6
-stretch_margin_top = 6
+stretch_margin_top = 4
 stretch_margin_right = 6
-stretch_margin_bottom = 6
+stretch_margin_bottom = 4
 texture_under = ExtResource("1_8haxe")
 texture_progress = ExtResource("3_flsa8")
 texture_progress_offset = Vector2(5, 0)
 
-[node name="HBoxContainer2" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
+[node name="HBoxContainer2" type="HBoxContainer" parent="MarginContainer/HBoxContainer3/VBoxContainer"]
 layout_mode = 2
 
-[node name="TextureRect" type="TextureRect" parent="MarginContainer/VBoxContainer/HBoxContainer2"]
+[node name="HealthTextureRect" type="TextureRect" parent="MarginContainer/HBoxContainer3/VBoxContainer/HBoxContainer2"]
+custom_minimum_size = Vector2(8, 0)
 layout_mode = 2
 texture = ExtResource("5_jg8i8")
-expand_mode = 2
+expand_mode = 4
+stretch_mode = 5
 
-[node name="HealthBar" type="TextureProgressBar" parent="MarginContainer/VBoxContainer/HBoxContainer2"]
+[node name="HealthBar" type="TextureProgressBar" parent="MarginContainer/HBoxContainer3/VBoxContainer/HBoxContainer2"]
 layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 0
 nine_patch_stretch = true
 stretch_margin_left = 6
-stretch_margin_top = 6
+stretch_margin_top = 4
 stretch_margin_right = 6
-stretch_margin_bottom = 6
+stretch_margin_bottom = 4
 texture_under = ExtResource("1_8haxe")
 texture_progress = ExtResource("3_flsa8")
 texture_progress_offset = Vector2(5, 0)

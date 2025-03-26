@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://bqi0n0ec0uw06"]
+[gd_scene load_steps=7 format=3 uid="uid://bqi0n0ec0uw06"]
 
 [ext_resource type="Script" path="res://scripts/game_control.gd" id="1_1mxds"]
-[ext_resource type="PackedScene" uid="uid://c5otcxy17agc3" path="res://scenes/Player.tscn" id="2_0yf63"]
 [ext_resource type="Script" path="res://scripts/level_control.gd" id="3_7aavn"]
-[ext_resource type="PackedScene" uid="uid://drqrwekif56uv" path="res://scenes/level/level.tscn" id="3_pndlw"]
 [ext_resource type="PackedScene" uid="uid://cggymoh3ki6g4" path="res://scenes/PlayerStats.tscn" id="3_qbgg4"]
+[ext_resource type="Texture2D" uid="uid://bmwj0v5krsycn" path="res://assets/background/paralaxe3.png" id="3_te05d"]
+[ext_resource type="Texture2D" uid="uid://cctpx8aghgu" path="res://assets/background/paralaxe2.png" id="4_72uic"]
+[ext_resource type="Texture2D" uid="uid://8kjapksa76t7" path="res://assets/background/paralaxe1.png" id="5_whjwm"]
 
 [node name="GameControl" type="Control"]
 layout_mode = 3
@@ -15,6 +16,33 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_1mxds")
 
+[node name="ParallaxBackground" type="Node2D" parent="."]
+
+[node name="ParallaxLayer3" type="Parallax2D" parent="ParallaxBackground"]
+repeat_size = Vector2(320, 180)
+repeat_times = 3
+
+[node name="BG3" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer3"]
+texture = ExtResource("3_te05d")
+
+[node name="ParallaxLayer2" type="Parallax2D" parent="ParallaxBackground"]
+scroll_scale = Vector2(0.5, 0.5)
+repeat_size = Vector2(320, 180)
+autoscroll = Vector2(-1, 0)
+repeat_times = 3
+
+[node name="BG2" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer2"]
+texture = ExtResource("4_72uic")
+
+[node name="ParallaxLayer" type="Parallax2D" parent="ParallaxBackground"]
+scroll_scale = Vector2(0.2, 0.2)
+repeat_size = Vector2(320, 180)
+autoscroll = Vector2(2, 0)
+repeat_times = 3
+
+[node name="BG1" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
+texture = ExtResource("5_whjwm")
+
 [node name="LevelControl" type="Control" parent="."]
 layout_mode = 1
 anchors_preset = 15
@@ -24,19 +52,8 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("3_7aavn")
 
-[node name="background" type="ColorRect" parent="LevelControl"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-color = Color(0.145098, 0.219608, 0.254902, 1)
-
-[node name="Level" parent="LevelControl" instance=ExtResource("3_pndlw")]
-
-[node name="Player" parent="." instance=ExtResource("2_0yf63")]
-
 [node name="UI" type="CanvasLayer" parent="."]
 
 [node name="PlayerStats" parent="UI" instance=ExtResource("3_qbgg4")]
+
+[connection signal="level_changed" from="LevelControl" to="UI/PlayerStats" method="_on_level_control_level_changed"]
