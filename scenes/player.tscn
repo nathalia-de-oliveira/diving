@@ -214,9 +214,9 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_lkv4y")
 }],
-"loop": true,
-"name": &"wet_back_atack",
-"speed": 6.0
+"loop": false,
+"name": &"back_atack",
+"speed": 10.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -231,8 +231,8 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_os2fm")
 }],
-"loop": true,
-"name": &"wet_back_idle",
+"loop": false,
+"name": &"back_idle",
 "speed": 6.0
 }, {
 "frames": [{
@@ -254,8 +254,8 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_adt5b")
 }],
-"loop": true,
-"name": &"wet_back_move",
+"loop": false,
+"name": &"back_move",
 "speed": 6.0
 }, {
 "frames": [{
@@ -277,9 +277,9 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_ik1sw")
 }],
-"loop": true,
-"name": &"wet_front_atack",
-"speed": 6.0
+"loop": false,
+"name": &"front_atack",
+"speed": 10.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -294,8 +294,8 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_7top5")
 }],
-"loop": true,
-"name": &"wet_front_idle",
+"loop": false,
+"name": &"front_idle",
 "speed": 6.0
 }, {
 "frames": [{
@@ -317,8 +317,8 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_f3rpn")
 }],
-"loop": true,
-"name": &"wet_front_move",
+"loop": false,
+"name": &"front_move",
 "speed": 6.0
 }, {
 "frames": [{
@@ -340,9 +340,9 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_rygs1")
 }],
-"loop": true,
-"name": &"wet_side_atack",
-"speed": 6.0
+"loop": false,
+"name": &"side_atack",
+"speed": 10.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -357,8 +357,8 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_scje7")
 }],
-"loop": true,
-"name": &"wet_side_idle",
+"loop": false,
+"name": &"side_idle",
 "speed": 6.0
 }, {
 "frames": [{
@@ -377,8 +377,8 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_68jal")
 }],
-"loop": true,
-"name": &"wet_side_move",
+"loop": false,
+"name": &"side_move",
 "speed": 6.0
 }]
 
@@ -390,7 +390,7 @@ position = Vector2(88, 45)
 script = ExtResource("1_a5wr1")
 
 [node name="PlayerLight" type="PointLight2D" parent="."]
-position = Vector2(-8.52652e-15, 2)
+position = Vector2(-8.52652e-15, 0)
 scale = Vector2(0.15, 0.15)
 color = Color(1, 0.7815, 0.43, 0.588235)
 energy = 0.5
@@ -401,7 +401,7 @@ texture = ExtResource("3_6ty4u")
 height = 25.0
 
 [node name="PlayerLightBeam" type="PointLight2D" parent="."]
-position = Vector2(0, 2)
+position = Vector2(0, 5.96046e-08)
 scale = Vector2(0.2, 0.2)
 color = Color(1, 0.7815, 0.43, 0.470588)
 energy = 0.5
@@ -409,21 +409,21 @@ shadow_enabled = true
 shadow_filter = 1
 shadow_filter_smooth = 35.0
 texture = ExtResource("3_lr046")
+texture_scale = 2.0
 height = 25.0
 
 [node name="PlayerSprite" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_6i8yf")
-animation = &"wet_side_atack"
+animation = &"back_atack"
 
 [node name="ColorRect" type="ColorRect" parent="."]
 offset_left = -250.0
-offset_top = -150.0
+offset_top = -148.0
 offset_right = 250.0
-offset_bottom = 150.0
+offset_bottom = 152.0
 color = Color(0.011, 0.0347333, 0.1, 0.0666667)
 
 [node name="PlayerCamera" type="Camera2D" parent="."]
-position = Vector2(0, -2)
 limit_left = -64
 limit_top = -64
 limit_right = 360
