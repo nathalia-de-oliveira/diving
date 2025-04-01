@@ -1604,5 +1604,4 @@ tile_set = SubResource("TileSet_a3t2o")
 position = Vector2(153, 114)
 
 [node name="Door" parent="." instance=ExtResource("2_cal44")]
-visible = false
 position = Vector2(220, 107)
