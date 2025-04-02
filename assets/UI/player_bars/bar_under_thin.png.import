@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dbdp40gyee3ci"
-path="res://.godot/imported/gas_bars_icon.png-2713260e134ae62a8be8885225d689c4.ctex"
+uid="uid://d1eluoup4d2u0"
+path="res://.godot/imported/bar_under_thin.png-01b1d30f0fd2f19dc32790118a51d482.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/UI/player_bars/gas_bars_icon.png"
-dest_files=["res://.godot/imported/gas_bars_icon.png-2713260e134ae62a8be8885225d689c4.ctex"]
+source_file="res://assets/UI/player_bars/bar_under_thin.png"
+dest_files=["res://.godot/imported/bar_under_thin.png-01b1d30f0fd2f19dc32790118a51d482.ctex"]
 
 [params]
 

@@ -2,15 +2,13 @@ extends Node
 
 var level
 
-var max_gas
-var player_gas
-
 var max_health
 var player_health
+var max_stamina
+var player_stamina
 
 func _ready() -> void:
-	max_gas = 100
-	player_gas = 100
-	
 	max_health = 50
 	player_health = 50
+	max_stamina = 80
+	player_stamina = 80
