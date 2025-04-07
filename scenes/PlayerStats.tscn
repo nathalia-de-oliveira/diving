@@ -1,12 +1,13 @@
-[gd_scene load_steps=8 format=3 uid="uid://cggymoh3ki6g4"]
+[gd_scene load_steps=9 format=3 uid="uid://cggymoh3ki6g4"]
 
-[ext_resource type="Texture2D" uid="uid://cw58x161hcj08" path="res://assets/UI/player_bars/bar_under.png" id="1_8haxe"]
+[ext_resource type="Texture2D" uid="uid://cw58x161hcj08" path="res://assets/UI/player_bars/bar_health.png" id="1_8haxe"]
 [ext_resource type="Script" path="res://scripts/interface/player_stats.gd" id="1_oivti"]
 [ext_resource type="Texture2D" uid="uid://jg0syomy8b0y" path="res://assets/UI/player_bars/clock_shape.png" id="2_ib1rx"]
-[ext_resource type="Texture2D" uid="uid://gm42dxwnerqu" path="res://assets/UI/player_bars/gas_process.png" id="3_flsa8"]
+[ext_resource type="Texture2D" uid="uid://gm42dxwnerqu" path="res://assets/UI/player_bars/stamina_process.png" id="3_flsa8"]
 [ext_resource type="FontFile" uid="uid://dmr3pgg4p5feu" path="res://assets/font/Clockwork.otf" id="3_w25po"]
+[ext_resource type="Texture2D" uid="uid://cfj4prwda2t2a" path="res://assets/UI/player_bars/heart_bars_icon.png" id="4_sx3wy"]
 [ext_resource type="Texture2D" uid="uid://psje3uemtf4v" path="res://assets/UI/player_bars/health_process.png" id="5_qgpbd"]
-[ext_resource type="Texture2D" uid="uid://d1eluoup4d2u0" path="res://assets/UI/player_bars/bar_under_thin.png" id="6_xdffj"]
+[ext_resource type="Texture2D" uid="uid://d1eluoup4d2u0" path="res://assets/UI/player_bars/bar_stamina.png" id="6_xdffj"]
 
 [node name="PlayerStats" type="Control"]
 layout_mode = 3
@@ -34,6 +35,13 @@ theme_override_constants/margin_bottom = 10
 layout_mode = 2
 theme_override_constants/separation = 2
 
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/HBoxContainer"]
+visible = false
+custom_minimum_size = Vector2(8, 0)
+layout_mode = 2
+texture = ExtResource("4_sx3wy")
+stretch_mode = 4
+
 [node name="ClockTextureRect" type="TextureRect" parent="MarginContainer/HBoxContainer"]
 clip_contents = true
 custom_minimum_size = Vector2(18, 18)
@@ -56,7 +64,7 @@ theme_override_colors/font_color = Color(0.384314, 0.27451, 0.219608, 1)
 theme_override_colors/font_outline_color = Color(0.682353, 0.639216, 0.423529, 1)
 theme_override_constants/outline_size = 3
 theme_override_fonts/font = ExtResource("3_w25po")
-theme_override_font_sizes/font_size = 6
+theme_override_font_sizes/font_size = 7
 text = "12345
 "
 horizontal_alignment = 1
@@ -65,7 +73,7 @@ autowrap_mode = 2
 
 [node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/HBoxContainer"]
 layout_mode = 2
-theme_override_constants/separation = -4
+theme_override_constants/separation = 0
 
 [node name="HealthBar" type="TextureProgressBar" parent="MarginContainer/HBoxContainer/VBoxContainer"]
 layout_mode = 2
@@ -73,9 +81,8 @@ size_flags_horizontal = 0
 size_flags_vertical = 0
 nine_patch_stretch = true
 stretch_margin_left = 6
-stretch_margin_top = 3
+stretch_margin_top = 4
 stretch_margin_right = 6
-stretch_margin_bottom = 5
 texture_under = ExtResource("1_8haxe")
 texture_progress = ExtResource("5_qgpbd")
 texture_progress_offset = Vector2(4, 0)
@@ -87,10 +94,10 @@ size_flags_horizontal = 0
 size_flags_vertical = 0
 nine_patch_stretch = true
 stretch_margin_left = 6
-stretch_margin_top = 3
+stretch_margin_top = 2
 stretch_margin_right = 6
 stretch_margin_bottom = 3
 texture_under = ExtResource("6_xdffj")
 texture_progress = ExtResource("3_flsa8")
 texture_progress_offset = Vector2(4, 0)
-tint_progress = Color(0.13116, 0.311032, 0.425386, 1)
+tint_progress = Color(0.2538, 0.43029, 0.54, 1)

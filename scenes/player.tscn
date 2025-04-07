@@ -1,9 +1,10 @@
-[gd_scene load_steps=54 format=3 uid="uid://c5otcxy17agc3"]
+[gd_scene load_steps=55 format=3 uid="uid://c5otcxy17agc3"]
 
 [ext_resource type="Script" path="res://scripts/player/player.gd" id="1_a5wr1"]
 [ext_resource type="Texture2D" uid="uid://v8hx1vq5hhfi" path="res://assets/player/light.png" id="3_6ty4u"]
 [ext_resource type="Texture2D" uid="uid://0dwp8vxlgr8c" path="res://assets/player/light_beam.png" id="3_lr046"]
 [ext_resource type="Texture2D" uid="uid://bgs5qafci6wmp" path="res://assets/player/playerSheet.png" id="4_qk1wd"]
+[ext_resource type="Script" path="res://scripts/interface/player_camera.gd" id="5_yf010"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_v03ip"]
 atlas = ExtResource("4_qk1wd")
@@ -432,6 +433,7 @@ color = Color(0, 0, 0, 0.0784314)
 [node name="PlayerCamera" type="Camera2D" parent="."]
 limit_smoothed = true
 editor_draw_limits = true
+script = ExtResource("5_yf010")
 
 [node name="PlayerCollision" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_sexxn")

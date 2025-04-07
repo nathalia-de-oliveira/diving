@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cw58x161hcj08"
-path="res://.godot/imported/bar_under.png-e18590c8c61bcf52fd500cd5b16270bc.ctex"
+uid="uid://xhsyxq3suao8"
+path="res://.godot/imported/camera.png-be6f53d80942bdce8af0d9c309a0bbaf.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/UI/player_bars/bar_under.png"
-dest_files=["res://.godot/imported/bar_under.png-e18590c8c61bcf52fd500cd5b16270bc.ctex"]
+source_file="res://assets/tilesets/camera.png"
+dest_files=["res://.godot/imported/camera.png-be6f53d80942bdce8af0d9c309a0bbaf.ctex"]
 
 [params]
 

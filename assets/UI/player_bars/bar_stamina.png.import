@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://gm42dxwnerqu"
-path="res://.godot/imported/gas_process.png-4fbd6726146a9a3c0551d0c8f282c7b4.ctex"
+uid="uid://d1eluoup4d2u0"
+path="res://.godot/imported/bar_stamina.png-2d3b63cca1211369108e597ae2767808.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/UI/player_bars/gas_process.png"
-dest_files=["res://.godot/imported/gas_process.png-4fbd6726146a9a3c0551d0c8f282c7b4.ctex"]
+source_file="res://assets/UI/player_bars/bar_stamina.png"
+dest_files=["res://.godot/imported/bar_stamina.png-2d3b63cca1211369108e597ae2767808.ctex"]
 
 [params]
 

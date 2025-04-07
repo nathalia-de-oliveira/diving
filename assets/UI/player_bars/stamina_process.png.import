@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://d1eluoup4d2u0"
-path="res://.godot/imported/bar_under_thin.png-01b1d30f0fd2f19dc32790118a51d482.ctex"
+uid="uid://gm42dxwnerqu"
+path="res://.godot/imported/stamina_process.png-b56dcb965f61cb1a4ccd59d1df4f4ad0.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/UI/player_bars/bar_under_thin.png"
-dest_files=["res://.godot/imported/bar_under_thin.png-01b1d30f0fd2f19dc32790118a51d482.ctex"]
+source_file="res://assets/UI/player_bars/stamina_process.png"
+dest_files=["res://.godot/imported/stamina_process.png-b56dcb965f61cb1a4ccd59d1df4f4ad0.ctex"]
 
 [params]
 

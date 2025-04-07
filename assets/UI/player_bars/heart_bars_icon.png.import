@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://xhsyxq3suao8"
-path="res://.godot/imported/camera.png-f5cd902e181aa007df217787f34f2643.ctex"
+uid="uid://cfj4prwda2t2a"
+path="res://.godot/imported/heart_bars_icon.png-75981d99d3a3d49cfe12b5087a31ff2d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/UI/camera.png"
-dest_files=["res://.godot/imported/camera.png-f5cd902e181aa007df217787f34f2643.ctex"]
+source_file="res://assets/UI/player_bars/heart_bars_icon.png"
+dest_files=["res://.godot/imported/heart_bars_icon.png-75981d99d3a3d49cfe12b5087a31ff2d.ctex"]
 
 [params]
 
