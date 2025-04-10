@@ -1,8 +1,9 @@
-[gd_scene load_steps=55 format=3 uid="uid://c5otcxy17agc3"]
+[gd_scene load_steps=56 format=3 uid="uid://c5otcxy17agc3"]
 
 [ext_resource type="Script" path="res://scripts/player/player.gd" id="1_a5wr1"]
 [ext_resource type="Texture2D" uid="uid://v8hx1vq5hhfi" path="res://assets/player/light.png" id="3_6ty4u"]
 [ext_resource type="Texture2D" uid="uid://0dwp8vxlgr8c" path="res://assets/player/light_beam.png" id="3_lr046"]
+[ext_resource type="Texture2D" uid="uid://cbxx58jpgwnf8" path="res://assets/player/player_shadow.png" id="4_f0u53"]
 [ext_resource type="Texture2D" uid="uid://bgs5qafci6wmp" path="res://assets/player/playerSheet.png" id="4_qk1wd"]
 [ext_resource type="Script" path="res://scripts/interface/player_camera.gd" id="5_yf010"]
 
@@ -389,7 +390,16 @@ size = Vector2(15, 29.5)
 [node name="Player" type="CharacterBody2D"]
 script = ExtResource("1_a5wr1")
 
+[node name="PointLight2D" type="TextureRect" parent="."]
+show_behind_parent = true
+offset_left = -8.0
+offset_top = 11.0
+offset_right = 8.0
+offset_bottom = 18.0
+texture = ExtResource("4_f0u53")
+
 [node name="PlayerLight" type="PointLight2D" parent="."]
+visible = false
 position = Vector2(-8.52652e-15, 0)
 scale = Vector2(0.15, 0.15)
 color = Color(1, 0.7815, 0.43, 0.588235)
@@ -398,21 +408,22 @@ shadow_enabled = true
 shadow_filter = 1
 shadow_filter_smooth = 5.0
 texture = ExtResource("3_6ty4u")
-texture_scale = 0.85
-height = 25.0
+texture_scale = 1.8
+height = 999.0
 
 [node name="PlayerLightBeam" type="PointLight2D" parent="."]
 position = Vector2(0, 5.96046e-08)
 scale = Vector2(0.2, 0.2)
 color = Color(1, 0.7815, 0.43, 0.470588)
+energy = 1.5
 shadow_enabled = true
 shadow_filter = 1
 shadow_filter_smooth = 35.0
 texture = ExtResource("3_lr046")
-texture_scale = 2.0
-height = 25.0
+texture_scale = 2.5
 
 [node name="PlayerSprite" type="AnimatedSprite2D" parent="."]
+show_behind_parent = true
 sprite_frames = SubResource("SpriteFrames_6i8yf")
 animation = &"back_atack"
 

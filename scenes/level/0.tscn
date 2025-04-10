@@ -1267,6 +1267,7 @@ tile_set = SubResource("TileSet_a3t2o")
 
 [node name="Player" parent="." instance=ExtResource("6_0kn6j")]
 position = Vector2(76, 107)
+motion_mode = 1
 
 [node name="Door" parent="." instance=ExtResource("2_cal44")]
 position = Vector2(220, 107)
