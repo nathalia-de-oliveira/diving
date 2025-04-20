@@ -70,26 +70,42 @@ func get_direction():
 	
 	axis = get_input_axis()
 	
-	if axis.y == 1:
-		light_beam.rotation_degrees = 0
-		animation_player.flip_h = false
-		animation_direction = "front"
-	if axis.y == -1:
-		light_beam.rotation_degrees = 180
-		animation_player.flip_h = false
-		animation_direction = "back"
-	if axis.x > 0:
-		light_beam.rotation_degrees = 270
-		animation_player.flip_h = true
-		animation_direction = "side"
-	if axis.x < 0:
-		light_beam.rotation_degrees = 90
-		animation_player.flip_h = false
-		animation_direction = "side"
-		
-#TODO: arrumar a viewport
-#TODO: viewport tem que mudar conforme o limite da fase
-#TODO: movimentação: diagonais
-#TODO: Sprites nas diagonais
-#TODO: Luz e posição do player na diagonal OU acompanhar mouse(?)
+	if axis.x == 0 && axis.y != 0:
+		if axis.y > 0:
+			light_beam.rotation_degrees = 0
+			animation_player.flip_h = false
+			animation_direction = "front"
+		if axis.y < 0:
+			light_beam.rotation_degrees = 180
+			animation_player.flip_h = false
+			animation_direction = "back"
+	if axis.y == 0 && axis.x != 0:
+		if axis.x > 0:
+			light_beam.rotation_degrees = 270
+			animation_player.flip_h = true
+			animation_direction = "side"
+		if axis.x < 0:
+			light_beam.rotation_degrees = 90
+			animation_player.flip_h = false
+			animation_direction = "side"
+	if axis.x != 0 && axis.y != 0:
+		if axis.y > 0: 
+			if axis.x > 0:
+				light_beam.rotation_degrees = 315
+				animation_player.flip_h = true
+				animation_direction = "digfront"
+			if axis.x < 0:
+				light_beam.rotation_degrees = 45
+				animation_player.flip_h = false
+				animation_direction = "digfront"
+		if axis.y < 0:
+			if axis.x > 0:
+				light_beam.rotation_degrees = 225
+				animation_player.flip_h = true
+				animation_direction = "digback"
+			if axis.x < 0:
+				light_beam.rotation_degrees = 135
+				animation_player.flip_h = false
+				animation_direction = "digback"
+
 #TODO: Bug de iluminação: parte do sprite do player fica escuro quando está na parede 

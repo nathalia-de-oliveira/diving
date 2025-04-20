@@ -1,6 +1,6 @@
 extends Control
 
-@onready var health_bar = $MarginContainer/HBoxContainer/VBoxContainer/HealthBar
+@onready var health_bar = $MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer/HealthBar
 @onready var stamina_bar = $MarginContainer/HBoxContainer/VBoxContainer/StaminaBar
 @onready var clock_number = $MarginContainer/HBoxContainer/ClockTextureRect/ClockNumber
 

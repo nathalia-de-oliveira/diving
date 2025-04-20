@@ -35,13 +35,6 @@ theme_override_constants/margin_bottom = 10
 layout_mode = 2
 theme_override_constants/separation = 2
 
-[node name="TextureRect" type="TextureRect" parent="MarginContainer/HBoxContainer"]
-visible = false
-custom_minimum_size = Vector2(8, 0)
-layout_mode = 2
-texture = ExtResource("4_sx3wy")
-stretch_mode = 4
-
 [node name="ClockTextureRect" type="TextureRect" parent="MarginContainer/HBoxContainer"]
 clip_contents = true
 custom_minimum_size = Vector2(18, 18)
@@ -75,13 +68,23 @@ autowrap_mode = 2
 layout_mode = 2
 theme_override_constants/separation = 0
 
-[node name="HealthBar" type="TextureProgressBar" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = -4
+
+[node name="Heart" type="TextureRect" parent="MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer"]
+z_index = 1
+layout_mode = 2
+texture = ExtResource("4_sx3wy")
+expand_mode = 2
+
+[node name="HealthBar" type="TextureProgressBar" parent="MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 0
 nine_patch_stretch = true
 stretch_margin_left = 6
-stretch_margin_top = 4
+stretch_margin_top = 7
 stretch_margin_right = 6
 texture_under = ExtResource("1_8haxe")
 texture_progress = ExtResource("5_qgpbd")
@@ -94,7 +97,7 @@ size_flags_horizontal = 0
 size_flags_vertical = 0
 nine_patch_stretch = true
 stretch_margin_left = 6
-stretch_margin_top = 2
+stretch_margin_top = 3
 stretch_margin_right = 6
 stretch_margin_bottom = 3
 texture_under = ExtResource("6_xdffj")

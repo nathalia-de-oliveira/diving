@@ -8,7 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://clpkyya53b4dm" path="res://assets/tilesets/wall/wall_shallows.png" id="4_k0di3"]
 [ext_resource type="PackedScene" uid="uid://c5otcxy17agc3" path="res://scenes/player.tscn" id="6_0kn6j"]
 [ext_resource type="Texture2D" uid="uid://d2s17g0ov2nvr" path="res://assets/objects/broken_boat.png" id="6_8tbfg"]
-[ext_resource type="Texture2D" uid="uid://xhsyxq3suao8" path="res://assets/tilesets/camera.png" id="9_x1317"]
+[ext_resource type="Texture2D" uid="uid://xhsyxq3suao8" path="res://assets/tilesets/wall/camera.png" id="9_x1317"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_fkhsi"]
 texture = ExtResource("1_f1xuv")
