@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cy2wd7hqfrkd3"
-path="res://.godot/imported/tileset_cb_shallows.png-d490c7147396ef6b98b1ff2312cb8740.ctex"
+uid="uid://y6x78un72r0k"
+path="res://.godot/imported/tileset_terrain_base_shallows.png-8351b574a695a482c65f4030e1f3b8f6.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/tilesets/terrain/tileset_cb_shallows.png"
-dest_files=["res://.godot/imported/tileset_cb_shallows.png-d490c7147396ef6b98b1ff2312cb8740.ctex"]
+source_file="res://assets/tilesets/terrain/tileset_terrain_base_shallows.png"
+dest_files=["res://.godot/imported/tileset_terrain_base_shallows.png-8351b574a695a482c65f4030e1f3b8f6.ctex"]
 
 [params]
 

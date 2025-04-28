@@ -1,7 +1,8 @@
 extends CharacterBody2D
 
-@onready var light_beam = $PlayerLightBeam
-@onready var animation_player = $PlayerSprite
+@onready var light_beam = $Visuals/PlayerLightBeam
+@onready var animation_player = $Visuals/PlayerSprite
+@onready var animation_effects = $Visuals/AnimationEffects
 var animation_direction = "front"
 var current_state = "idle"
 var state_update
@@ -18,10 +19,12 @@ func _ready():
 func _physics_process(delta):
 	
 	if state_update == false:
+		animation_effects.pause()
 		if current_state == "atack": #The atack state duration is defined by the animation
 			if animation_player.frame_progress == 1:
 				state_update = true
 	else:
+		animation_effects.play("floating")
 		player_state(delta)
 	
 func get_input_axis():
@@ -108,4 +111,5 @@ func get_direction():
 				animation_player.flip_h = false
 				animation_direction = "digback"
 
+#TODO: corrigir animações de ataque, as vezes é destro e às vezes canhotokkkkk
 #TODO: Bug de iluminação: parte do sprite do player fica escuro quando está na parede 

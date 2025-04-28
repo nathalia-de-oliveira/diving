@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://chlivvukvn5m0"
-path="res://.godot/imported/tileset_cc_shallows.png-f71c266d1f7dfbe19a88ddda866ba010.ctex"
+uid="uid://b3by04b8acpki"
+path="res://.godot/imported/playerSheetAtack.png-cf855b52bd7754913616ea1ec11d22dd.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/tilesets/terrain/tileset_cc_shallows.png"
-dest_files=["res://.godot/imported/tileset_cc_shallows.png-f71c266d1f7dfbe19a88ddda866ba010.ctex"]
+source_file="res://assets/player/playerSheetAtack.png"
+dest_files=["res://.godot/imported/playerSheetAtack.png-cf855b52bd7754913616ea1ec11d22dd.ctex"]
 
 [params]
 
